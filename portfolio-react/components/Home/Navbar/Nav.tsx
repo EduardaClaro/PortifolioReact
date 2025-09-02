@@ -27,7 +27,7 @@ const Nav = ({ openNav }: Props) => {
   return (
     <div
       className={`transition-all ${
-        navBg ? "bg-[#011720] shadow-md" : "fixed"
+        navBg ? "bg-[#01042d] shadow-md" : "fixed"
       } duration-200 h-[12vh] z-[10000] fixed w-full`}
     >
       <div className="flex items-center h-full justify-between w-[90%] mx-auto">
@@ -37,7 +37,7 @@ const Nav = ({ openNav }: Props) => {
             <FaCode size={20} color="black" />
           </div>
           <h1 className="text-xl hidden sm:block md:text-2xl text-white font-bold">
-            SAJAL
+            Portifólio
           </h1>
         </div>
 
