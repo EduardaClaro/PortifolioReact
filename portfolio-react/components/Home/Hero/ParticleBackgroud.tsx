@@ -1,4 +1,4 @@
-"use client";
+"use client"; // biblioteca que está sendo utilizada tsparticles
 
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -7,7 +7,7 @@ import {
   type ISourceOptions,
   MoveDirection,
   OutMode,
-} from "@tsparticles/engine";
+} from "@tsparticles/engine"; 
 import { loadSlim } from "@tsparticles/slim";
 
 export default function ParticlesHero() {
