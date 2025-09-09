@@ -54,7 +54,8 @@ const Hero = () => {
           </h2>
         </div>
 
-        <div className="mt-6">
+        <div className="mt-6 flex gap-4">
+          {/* Botão Meus Projetos */}
           <button
             className="px-6 py-2 bg-purple-900 hover:bg-purple-950 transition-all duration-300 ease-in-out
             cursor-pointer rounded-full text-lg font-medium flex items-center justify-center hover:scale-108"
