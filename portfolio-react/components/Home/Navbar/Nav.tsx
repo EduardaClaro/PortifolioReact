@@ -65,10 +65,15 @@ const Nav = ({ openNav }: Props) => {
         {/* Buttons */}
         <div className="flex items-center space-x-4">
           {/* CV Button */}
-          <button className="px-6 py-2.5 text-lg cursor-pointer rounded-full bg-purple-900 hover:bg-purple-950 transition-all duration-300 ease-in-out text-white flex items-center space-x-2 hover:scale-105">
+          <a
+            href="/curriculo.pdf"
+            download="curriculo-MariaEduarda.pdf"
+            target="_blank"
+            className="px-6 py-2.5 text-lg cursor-pointer rounded-full bg-purple-900 hover:bg-purple-950 transition-all duration-300 ease-in-out text-white flex items-center space-x-2 hover:scale-105"
+          >
             <BiDownload size={22} />
             <span>Download CV</span>
-          </button>
+          </a>
 
           {/* Burger Menu */}
           <div
