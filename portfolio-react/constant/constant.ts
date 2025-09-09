@@ -10,17 +10,23 @@ export const NavLinks = [
   {
     id: 2,
     url: "#",
-    Label: "Resumo",
+    Label: "Competências",
   },
 
   {
     id: 3,
     url: "#",
-    Label: "Projetos",
+    Label: "Resumo",
   },
 
   {
     id: 4,
+    url: "#",
+    Label: "Projetos",
+  },
+
+  {
+    id: 5,
     url: "#",
     Label: "Contatos",
   },
