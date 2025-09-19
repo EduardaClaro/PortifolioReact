@@ -1,51 +1,69 @@
+"use client";
+
 import React from "react";
 import ServicesCard from "./ServicesCard";
 import { Roboto_Condensed } from "next/font/google";
+import { motion } from "framer-motion";
 
-// Fonte
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
 
+const services = [
+  {
+    icon: "/assets/s1.png",
+    name: "UI / UX",
+    description: "Interfaces intuitivas e agradáveis para uma melhor experiência de uso.",
+  },
+  {
+    icon: "/assets/s2.png",
+    name: "App Web e Mobile",
+    description: "Apps eficientes, otimizados para usabilidade e desempenho.",
+  },
+  {
+    icon: "/assets/s3.png",
+    name: "Design & Criativo",
+    description: "Layouts atrativos que garantem acessibilidade e fluidez.",
+  },
+  {
+    icon: "/assets/s4.png",
+    name: "Desenvolvimento",
+    description: "Aplicações completas integrando frontend e backend.",
+  },
+  {
+    icon: "/assets/s5.png",
+    name: "API & Servidores",
+    description: "APIs REST com Node.js, C#, Python e microsserviços.",
+  },
+  {
+    icon: "/assets/s6.png",
+    name: "Banco de Dados",
+    description: "SQL (PostgreSQL, MySQL) e NoSQL (MongoDB), modelagem e otimização.",
+  },
+];
+
 const Services = () => {
   return (
     <div className={`pt-16 pb-16 ${robotoCondensed.className}`}>
-      <h1 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white transition-all duration-300 ease-in-out hover:scale-105 hover:text-purple-400 mt-30">
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center text-4xl sm:text-5xl font-bold text-transparent bg-clip-text hover:scale-105 transition-all cursor-pointer bg-purple-300 hover:bg-purple-500 animate-gradient-x"
+      >
         Competências Técnicas
-      </h1>
+      </motion.h1>
 
-      <div className="w-[90%] sm:w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mt-20 mb-20 items-stretch">
-        <ServicesCard
-          icon="/assets/s1.png"
-          name="UI / UX"
-          description="Criando interfaces intuitivas, eficientes e agradáveis para uma melhor experiência de uso."
-        />
-        <ServicesCard
-          icon="/assets/s2.png"
-          name="App Web e Mobile"
-          description="Criação de apps web e mobile com eficiência, otimizada para usabilidade e desempenho."
-        />
-        <ServicesCard
-          icon="/assets/s3.png"
-          name="Design & Criativo"
-          description="Desenvolvendo layouts intuitivos e atrativos para garantir experiências otimizadas e acessíveis."
-        />
-        <ServicesCard
-          icon="/assets/s4.png"
-          name="Desenvolvimento"
-          description="Construção de aplicações completas, integrando frontend e backend."
-        />
-        <ServicesCard
-          icon="/assets/s5.png"
-          name="API & Servidores"
-          description="Criação de APIs REST com Node.js, CSharp, Python e integração com microsserviços."
-        />
-        <ServicesCard
-          icon="/assets/s6.png"
-          name="Banco de Dados"
-          description="Experiência com SQL (PostgreSQL, MySQL) e NoSQL (MongoDB), modelagem e otimização de consultas."
-        />
+      <div className="w-[90%] max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-10 mt-12 sm:mt-16">
+        {services.map((service, index) => (
+          <ServicesCard
+            key={index}
+            icon={service.icon}
+            name={service.name}
+            description={service.description}
+          />
+        ))}
       </div>
     </div>
   );
