@@ -11,9 +11,10 @@ const robotoCondensed = Roboto_Condensed({
 
 const projects = [
   {
-    image: "/assets/proj1.jpg",
+    image: "/assets/proj1.jpg",   // imagem de preview
+    video: "/assets/proj1.mp4",   // vídeo do projeto
     title: "CâmbioEx",
-    description: "App Conversor de Moedas: iOS/Android, React Native/JS, Expo Go para testes, UI fluida e responsiva.",
+    description: "App Conversor de Moedas...",
     techs: ["React Native", "JavaScript", "Expo Go"],
     link: "https://github.com/EduardaClaro/ConversionApp",
   },
