@@ -47,10 +47,10 @@ const Services = () => {
   return (
     <div className={`pt-16 sm:pt-20 xl:pt-24 pb-16 sm:pb-20 xl:pb-24 ${robotoCondensed.className}`}>
       <motion.h1
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-purple-300 hover:bg-purple-500 transition-all cursor-pointer"
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-purple-300 hover:bg-purple-500 cursor-pointer hover:scale-105 transition-transform duration-500"
       >
         Competências Técnicas
       </motion.h1>
@@ -59,8 +59,10 @@ const Services = () => {
         {services.map((service, index) => (
           <motion.div
             key={index}
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 200 }}
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 120 }}
+            viewport={{ once: true }}
           >
             <ServicesCard
               icon={service.icon}

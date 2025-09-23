@@ -14,16 +14,23 @@ type Props = {
 
 const ServicesCard = ({ icon, name, description, className }: Props) => {
   return (
-    <Tilt glareEnable={true} glareColor="#ffffff" glareMaxOpacity={0.2}>
+    <Tilt
+      glareEnable={true}
+      glareColor="#ffffff"
+      glareMaxOpacity={0.25}
+      tiltMaxAngleX={15}
+      tiltMaxAngleY={15}
+      perspective={1000}
+      transitionSpeed={400}
+      scale={1.05}
+    >
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className={`flex flex-col items-center justify-start text-center bg-white/10 backdrop-blur-md border border-white/20 
-        rounded-2xl shadow-xl hover:shadow-purple-500/30 hover:scale-105 transition-all duration-300 ease-in-out p-6 ${className || ""}`}
+        whileHover={{ scale: 1.05, rotateY: 5, rotateX: 5 }}
+        transition={{ type: "spring", stiffness: 150, damping: 10 }}
+        className={`flex flex-col items-center justify-start text-center bg-white/10 backdrop-blur-md border border-white/20
+        rounded-2xl shadow-lg hover:shadow-purple-500/40 p-6 ${className || ""}`}
       >
-        <div className="h-[120px] sm:h-[150px] flex items-center justify-center transition-all duration-300 ease-in-out hover:scale-105">
+        <div className="h-[120px] sm:h-[150px] flex items-center justify-center transition-transform duration-500 ease-out hover:scale-110">
           <Image
             src={icon}
             alt={name}
@@ -33,7 +40,7 @@ const ServicesCard = ({ icon, name, description, className }: Props) => {
           />
         </div>
 
-        <h1 className="text-white text-xl sm:text-2xl mt-4 transition-all duration-300 ease-in-out hover:text-purple-400 hover:scale-105">
+        <h1 className="text-white text-xl sm:text-2xl mt-4 font-semibold transition-all duration-300 ease-in-out hover:text-purple-400 hover:scale-105">
           {name}
         </h1>
         <p className="text-white text-sm sm:text-base mt-2 transition-all duration-300 ease-in-out hover:text-purple-300">
