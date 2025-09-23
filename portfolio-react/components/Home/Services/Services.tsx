@@ -39,30 +39,35 @@ const services = [
   {
     icon: "/assets/s6.png",
     name: "Banco de Dados",
-    description: "SQL (PostgreSQL, MySQL) e NoSQL (MongoDB), modelagem e otimização.",
+    description: "SQL (PostgreSQL, MySQL) e MongoDB: modelagem e otimização.",
   },
 ];
 
 const Services = () => {
   return (
-    <div className={`pt-16 pb-16 ${robotoCondensed.className}`}>
+    <div className={`pt-16 sm:pt-20 xl:pt-24 pb-16 sm:pb-20 xl:pb-24 ${robotoCondensed.className}`}>
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center text-4xl sm:text-5xl font-bold text-transparent bg-clip-text hover:scale-105 transition-all cursor-pointer bg-purple-300 hover:bg-purple-500 animate-gradient-x"
+        className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-purple-300 hover:bg-purple-500 transition-all cursor-pointer"
       >
         Competências Técnicas
       </motion.h1>
 
-      <div className="w-[90%] max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-10 mt-12 sm:mt-16">
+      <div className="w-[90%] max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mt-12 sm:mt-16">
         {services.map((service, index) => (
-          <ServicesCard
+          <motion.div
             key={index}
-            icon={service.icon}
-            name={service.name}
-            description={service.description}
-          />
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 200 }}
+          >
+            <ServicesCard
+              icon={service.icon}
+              name={service.name}
+              description={service.description}
+            />
+          </motion.div>
         ))}
       </div>
     </div>
