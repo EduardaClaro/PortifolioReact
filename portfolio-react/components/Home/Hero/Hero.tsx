@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { BsArrowRight } from "react-icons/bs";
+import { motion } from "framer-motion";
 import ParticlesHero from "./ParticleBackgroud";
 import { Roboto_Condensed } from "next/font/google";
 
@@ -23,20 +23,44 @@ const Hero = () => {
       <ParticlesHero />
 
       <div className="relative z-10 flex flex-col items-center w-[90%] max-w-6xl mx-auto px-4">
-        <Image
-          src="/assets/avatarDuda.png"
-          alt="heroimage"
-          className="w-40 sm:w-56 md:w-72 lg:w-96 h-auto mb-8 transition-all duration-500 ease-in-out hover:scale-105"
-          width={370}
-          height={370}
-        />
+        {/* Avatar com animação */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, y: 50 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          whileHover={{ scale: 1.05, rotate: 2 }}
+        >
+          <Image
+            src="/assets/avatarDuda.png"
+            alt="heroimage"
+            className="w-40 sm:w-56 md:w-72 lg:w-96 h-auto mb-8 rounded-full shadow-lg"
+            width={370}
+            height={370}
+          />
+        </motion.div>
 
-        <div className="text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold transition-all duration-300 ease-in-out hover:scale-105 hover:text-purple-300">
+        {/* Textos */}
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+        >
+          <motion.h1
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold"
+            whileHover={{ scale: 1.05, color: "#D8B4FE" }}
+            transition={{ type: "spring", stiffness: 200 }}
+          >
             Sejam <span className="text-purple-500">Bem Vindos</span>
-          </h1>
+          </motion.h1>
 
-          <h2 className="mt-5 text-base sm:text-xl md:text-2xl font-medium flex items-center justify-center gap-2 transition-all duration-300 ease-in-out hover:text-purple-300">
+          <motion.h2
+            className="mt-5 text-base sm:text-xl md:text-2xl font-medium flex items-center justify-center gap-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.6 }}
+            whileHover={{ scale: 1.02, color: "#D8B4FE" }}
+          >
             Portfólio
             <span className="text-purple-500 font-bold">
               <Typewriter
@@ -51,11 +75,8 @@ const Hero = () => {
                 }}
               />
             </span>
-          </h2>
-        </div>
-
-        <div className="mt-6 flex flex-col sm:flex-row gap-4">
-        </div>
+          </motion.h2>
+        </motion.div>
       </div>
     </div>
   );
