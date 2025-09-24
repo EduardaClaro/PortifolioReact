@@ -10,7 +10,7 @@ import {
   BiLogoInstagram,
 } from "react-icons/bi";
 import { Roboto_Condensed } from "next/font/google";
-import { motion } from "framer-motion"; // Para animações suaves
+import { motion } from "framer-motion";
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
@@ -45,33 +45,28 @@ export default function ContactPage() {
     }
   };
 
-  const fadeUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  };
-
   return (
-    <div className={`min-h-screen flex items-center justify-center p-8 ${robotoCondensed.className}`}>
+    <div className={`min-h-screen flex items-center justify-center p-6 ${robotoCondensed.className}`}>
       <motion.div
-        className="w-full max-w-6xl grid lg:grid-cols-2 gap-12 items-center"
+        className="w-full max-w-5xl grid lg:grid-cols-2 gap-8 items-center"
         initial="hidden"
         animate="visible"
       >
-        {/* Left Side - Content */}
-        <div className="space-y-8">
-          <div className="space-y-4">
+        {/* Lado Esquerdo */}
+        <div className="space-y-6">
+          <div className="space-y-3">
             <motion.h1
-              className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-500 leading-tight cursor-pointer"
+              className="text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-500 leading-snug cursor-pointer"
               whileHover={{ scale: 1.05, rotate: 1 }}
               transition={{ type: "spring", stiffness: 120 }}
             >
               Quer conversar sobre ideias ou oportunidades?
             </motion.h1>
-            <p className="text-gray-400 text-lg">Entre em contato comigo e envie uma mensagem!</p>
+            <p className="text-gray-400 text-base">Entre em contato comigo e envie uma mensagem!</p>
           </div>
 
-          {/* Contact Information */}
-          <div className="space-y-6">
+          {/* Informações */}
+          <div className="space-y-4">
             {[
               { icon: BiPhone, label: "+ (15) 99742-2080" },
               { icon: BiLogoGmail, label: "eduardaclaro1dev@gmail.com" },
@@ -79,20 +74,20 @@ export default function ContactPage() {
             ].map((item, idx) => (
               <motion.div
                 key={idx}
-                className="flex items-center gap-4 bg-[#4c036245] p-4 rounded-2xl cursor-pointer"
-                whileHover={{ scale: 1.05, rotate: idx % 2 === 0 ? -1 : 1, boxShadow: "0 10px 20px rgba(128,0,255,0.4)" }}
+                className="flex items-center gap-3 bg-[#4c036245] p-3 rounded-xl cursor-pointer"
+                whileHover={{ scale: 1.05, rotate: idx % 2 === 0 ? -1 : 1, boxShadow: "0 8px 16px rgba(128,0,255,0.4)" }}
                 transition={{ type: "spring", stiffness: 120 }}
               >
-                <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
                   <item.icon className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-purple-300 text-lg font-semibold">{item.label}</span>
+                <span className="text-purple-300 text-base font-semibold">{item.label}</span>
               </motion.div>
             ))}
           </div>
 
-          {/* Social Media Icons */}
-          <div className="flex gap-4">
+          {/* Redes Sociais */}
+          <div className="flex gap-3">
             {[
               { icon: BiLogoGithub, link: "https://github.com/EduardaClaro" },
               { icon: BiLogoLinkedin, link: "https://www.linkedin.com/in/maria-eduarda-claro-90b017313/" },
@@ -103,8 +98,8 @@ export default function ContactPage() {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-[#4c036245] rounded-full flex items-center justify-center cursor-pointer"
-                whileHover={{ scale: 1.15, rotate: idx % 2 === 0 ? 12 : -12, backgroundColor: "#9c5aed", boxShadow: "0 8px 20px rgba(124,58,237,0.5)" }}
+                className="w-10 h-10 bg-[#4c036245] rounded-full flex items-center justify-center cursor-pointer"
+                whileHover={{ scale: 1.15, rotate: idx % 2 === 0 ? 12 : -12, backgroundColor: "#9c5aed", boxShadow: "0 6px 16px rgba(124,58,237,0.5)" }}
                 transition={{ type: "spring", stiffness: 120 }}
               >
                 <item.icon className="w-5 h-5 text-purple-200" />
@@ -113,33 +108,33 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Right Side - Contact Form */}
+        {/* Lado Direito - Formulário */}
         <motion.div
-          className="bg-[#4c036245] p-8 rounded-3xl shadow-lg"
-          whileHover={{ scale: 1.03, boxShadow: "0 15px 30px rgba(128,0,255,0.3)" }}
+          className="bg-[#4c036245] p-6 rounded-2xl shadow-lg"
+          whileHover={{ scale: 1.02, boxShadow: "0 12px 24px rgba(128,0,255,0.3)" }}
           transition={{ type: "spring", stiffness: 100 }}
         >
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <div className="space-y-3">
               {["name", "email", "phone"].map((field) => (
                 <motion.input
                   key={field}
                   name={field}
                   type={field === "email" ? "email" : field === "phone" ? "tel" : "text"}
                   placeholder={field === "name" ? "Nome" : field === "email" ? "Endereço de Email" : "Número de Celular"}
-                  className="w-full bg-slate-800/50 border border-purple-500/30 text-white placeholder:text-purple-300/70 h-14 text-lg focus:border-purple-400 focus:ring-2 focus:ring-purple-400 rounded-xl outline-none px-4"
-                  whileFocus={{ scale: 1.03, boxShadow: "0 5px 15px rgba(124,58,237,0.4)" }}
+                  className="w-full bg-slate-800/50 border border-purple-500/30 text-white placeholder:text-purple-300/70 h-12 text-base focus:border-purple-400 focus:ring-2 focus:ring-purple-400 rounded-lg outline-none px-3"
+                  whileFocus={{ scale: 1.02, boxShadow: "0 4px 12px rgba(124,58,237,0.4)" }}
                   transition={{ type: "spring", stiffness: 120 }}
-                  required={field !== "phone" ? true : false}
+                  required={field !== "phone"}
                 />
               ))}
 
               <motion.textarea
                 name="message"
                 placeholder="Sua Mensagem"
-                rows={6}
-                className="w-full bg-slate-800/50 border border-purple-500/30 text-white placeholder:text-purple-300/70 text-lg resize-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 rounded-xl outline-none p-4"
-                whileFocus={{ scale: 1.03, boxShadow: "0 5px 15px rgba(124,58,237,0.4)" }}
+                rows={5}
+                className="w-full bg-slate-800/50 border border-purple-500/30 text-white placeholder:text-purple-300/70 text-base resize-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 rounded-lg outline-none p-3"
+                whileFocus={{ scale: 1.02, boxShadow: "0 4px 12px rgba(124,58,237,0.4)" }}
                 transition={{ type: "spring", stiffness: 120 }}
                 required
               />
@@ -147,8 +142,8 @@ export default function ContactPage() {
 
             <motion.button
               type="submit"
-              className="w-full bg-purple-600 hover:bg-purple-700 text-white h-14 text-lg font-semibold rounded-xl"
-              whileHover={{ scale: 1.05, boxShadow: "0 8px 25px rgba(124,58,237,0.5)" }}
+              className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12 text-base font-semibold rounded-lg"
+              whileHover={{ scale: 1.05, boxShadow: "0 6px 18px rgba(124,58,237,0.5)" }}
               transition={{ type: "spring", stiffness: 120 }}
             >
               Enviar Mensagem
