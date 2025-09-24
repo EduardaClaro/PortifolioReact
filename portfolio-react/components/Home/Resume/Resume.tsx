@@ -15,7 +15,7 @@ const robotoCondensed = Roboto_Condensed({
 
 const Resume = () => {
   return (
-    <div className={`pt-16 pb-16 ${robotoCondensed.className}`}>
+    <div className={`pt-12 pb-12 ${robotoCondensed.className}`}>
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -24,7 +24,7 @@ const Resume = () => {
           hidden: {},
           visible: { transition: { staggerChildren: 0.2 } },
         }}
-        className="w-[90%] max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch"
+        className="w-[90%] max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch"
       >
         {/* Estudos */}
         <motion.div
@@ -34,10 +34,10 @@ const Resume = () => {
           transition={{ duration: 0.6 }}
           className="flex flex-col h-full"
         >
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center hover:scale-105 hover:text-purple-400 transition-all duration-300 ease-in-out">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center hover:scale-105 hover:text-purple-400 transition-all duration-300 ease-in-out">
             Meus <span className="text-purple-500">Estudos</span>
           </h1>
-          <div className="mt-8 flex flex-col gap-6 h-full">
+          <div className="mt-6 flex flex-col gap-5 h-full">
             <ResumeCard
               Icon={BiBadge}
               role="Análise e Desenvolvimento de Sistemas"
@@ -69,10 +69,10 @@ const Resume = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col h-full"
         >
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center hover:scale-105 hover:text-purple-400 transition-all duration-300 ease-in-out">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center hover:scale-105 hover:text-purple-400 transition-all duration-300 ease-in-out">
             Minhas <span className="text-purple-500">Experiências</span>
           </h1>
-          <div className="mt-8 flex flex-col gap-6 h-auto">
+          <div className="mt-6 flex flex-col gap-5 h-auto">
             <ResumeCard
               Icon={FaCodepen}
               role="Desenvolvedora Full Stack"
