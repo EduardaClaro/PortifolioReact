@@ -54,7 +54,7 @@ const Services = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold 
-        text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-purple-400 to-purple-600 
+        text-transparent bg-clip-text bg-gradient-to-r bg-purple-300 hover:bg-purple-500  
         hover:scale-105 transition-transform duration-500"
       >
         Competências Técnicas
