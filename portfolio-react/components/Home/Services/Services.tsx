@@ -45,23 +45,29 @@ const services = [
 
 const Services = () => {
   return (
-    <div className={`pt-16 sm:pt-20 xl:pt-24 pb-16 sm:pb-20 xl:pb-24 ${robotoCondensed.className}`}>
+    <div
+      className={`pt-14 sm:pt-20 xl:pt-24 pb-14 sm:pb-20 xl:pb-24 ${robotoCondensed.className}`}
+    >
+      {/* Título */}
       <motion.h1
-        initial={{ opacity: 0, y: -30 }}
+        initial={{ opacity: 0, y: -25 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-purple-300 hover:bg-purple-500 cursor-pointer hover:scale-105 transition-transform duration-500"
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold 
+        text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-purple-400 to-purple-600 
+        hover:scale-105 transition-transform duration-500"
       >
         Competências Técnicas
       </motion.h1>
 
-      <div className="w-[90%] max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mt-12 sm:mt-16">
+      {/* Grid de cards */}
+      <div className="w-[92%] max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-10 sm:mt-14">
         {services.map((service, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            initial={{ opacity: 0, y: 20, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 120 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
           >
             <ServicesCard

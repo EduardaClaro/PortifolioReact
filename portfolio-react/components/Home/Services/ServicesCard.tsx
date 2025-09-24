@@ -15,35 +15,40 @@ type Props = {
 const ServicesCard = ({ icon, name, description, className }: Props) => {
   return (
     <Tilt
-      glareEnable={true}
+      glareEnable
       glareColor="#ffffff"
-      glareMaxOpacity={0.25}
-      tiltMaxAngleX={15}
-      tiltMaxAngleY={15}
-      perspective={1000}
-      transitionSpeed={400}
-      scale={1.05}
+      glareMaxOpacity={0.2}
+      tiltMaxAngleX={10}
+      tiltMaxAngleY={10}
+      perspective={800}
+      transitionSpeed={300}
+      scale={1.03}
     >
       <motion.div
-        whileHover={{ scale: 1.05, rotateY: 5, rotateX: 5 }}
-        transition={{ type: "spring", stiffness: 150, damping: 10 }}
-        className={`flex flex-col items-center justify-start text-center bg-white/10 backdrop-blur-md border border-white/20
-        rounded-2xl shadow-lg hover:shadow-purple-500/40 p-6 ${className || ""}`}
+        whileHover={{ scale: 1.04 }}
+        transition={{ type: "spring", stiffness: 120, damping: 12 }}
+        className={`flex flex-col items-center justify-start text-center 
+        bg-white/10 backdrop-blur-md border border-white/20
+        rounded-xl shadow-md hover:shadow-purple-500/30 p-4 sm:p-5 ${className || ""}`}
       >
-        <div className="h-[120px] sm:h-[150px] flex items-center justify-center transition-transform duration-500 ease-out hover:scale-110">
+        {/* Ícone */}
+        <div className="h-[90px] sm:h-[110px] flex items-center justify-center hover:scale-105 transition-transform">
           <Image
             src={icon}
             alt={name}
-            width={100}
-            height={100}
-            className="object-contain w-20 sm:w-28 md:w-32 h-auto"
+            width={80}
+            height={80}
+            className="object-contain w-16 sm:w-20 md:w-24 h-auto"
           />
         </div>
 
-        <h1 className="text-white text-xl sm:text-2xl mt-4 font-semibold transition-all duration-300 ease-in-out hover:text-purple-400 hover:scale-105">
+        {/* Título */}
+        <h1 className="text-white text-lg sm:text-xl mt-3 font-semibold hover:text-purple-400 transition-colors">
           {name}
         </h1>
-        <p className="text-white text-sm sm:text-base mt-2 transition-all duration-300 ease-in-out hover:text-purple-300">
+
+        {/* Descrição */}
+        <p className="text-white/90 text-sm sm:text-base mt-2 leading-relaxed">
           {description}
         </p>
       </motion.div>
