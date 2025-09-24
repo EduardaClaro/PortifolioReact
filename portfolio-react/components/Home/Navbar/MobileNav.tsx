@@ -36,13 +36,13 @@ const MobileNav: React.FC<MobileNavProps> = ({ showNav, closeNav }) => {
       )}
 
       <div
-        className={`${robotoCondensed.className} text-white ${navOpen} fixed justify-center flex flex-col h-full transform transition-all duration-500 w-[80%] sm:w-[60%] bg-[#1e0e2b] space-y-6 z-[100050] right-0`}
+        className={`${robotoCondensed.className} text-white ${navOpen} fixed justify-center flex flex-col h-full w-[80%] sm:w-[60%] bg-[#1e0e2b] space-y-6 z-[100050] right-0`}
       >
         {NavLinks.map((link) => (
           <button
             key={link.id}
             onClick={() => handleScroll(link.url)}
-            className="text-white hover:text-purple-400 w-fit text-lg sm:text-2xl md:text-[30px] ml-12 border-b pb-1 border-purple-300 transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer text-left"
+            className="text-white hover:text-purple-400 w-fit text-lg sm:text-2xl md:text-[30px] ml-12 border-b pb-1 border-purple-300 text-left"
           >
             {link.Label}
           </button>
@@ -52,7 +52,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ showNav, closeNav }) => {
           type="button"
           onClick={closeNav}
           aria-label="Fechar menu"
-          className="absolute top-4 right-4 p-2 transition-all duration-300 ease-in-out hover:scale-110"
+          className="absolute top-4 right-4 p-2"
         >
           <CgClose size={28} color="white" />
         </button>

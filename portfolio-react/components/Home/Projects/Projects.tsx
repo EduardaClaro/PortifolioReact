@@ -11,12 +11,28 @@ const robotoCondensed = Roboto_Condensed({
 
 const projects = [
   {
-    image: "/assets/proj1.jpg",   // imagem de preview
-    video: "/assets/proj1.mp4",   // vídeo do projeto
+    image: "/assets/proj1.jpg",
+    video: "/assets/proj1.mp4",
     title: "CâmbioEx",
-    description: "App Conversor de Moedas...",
+    description: "Conversor de Moedas, feito em React Native com Expo Go, converte moedas com interface fluida para iOS e Android.",
     techs: ["React Native", "JavaScript", "Expo Go"],
     link: "https://github.com/EduardaClaro/ConversionApp",
+  },
+  {
+    image: "/assets/proj2.jpg",
+    video: "/assets/proj2.mp4",
+    title: "Extração Dados",
+    description: "Extração de Dados usa FastAPI, Python, PostgreSQL e Docker para extrair dados de documentos e notas fiscais com escalabilidade.",
+    techs: ["FastAPI", "Python", "PostgreSQL", "Docker"],
+    link: "https://github.com/Avaliacao-de-Desempenho/MariaEduarda-AVALIACAO",
+  },
+  {
+    image: "/assets/proj3.jpg",
+    video: "/assets/proj3.mp4",
+    title: "FastEdit",
+    description: "O FastEdit remove fundos de imagens e salva edições, usando FastAPI em Python, biblioteca gratuita e integração com Docker.",
+    techs: ["FastAPI", "Python", "Docker"],
+    link: "https://github.com/EduardaClaro/FastAPI-edit",
   },
 ];
 
