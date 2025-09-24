@@ -12,3 +12,30 @@
 html {
   scroll-behavior: smooth; 
 }
+
+/* Para navegadores Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* largura da barra */
+}
+
+::-webkit-scrollbar-track {
+  background: #160124; /* fundo da barra */
+  border-radius: 0; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6b2091; /* cor da barra */
+  border-radius: 0; /* totalmente quadrado */
+  border: 2px solid #160124; /* espaço entre a thumb e o track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b2091; /* cor ao passar o mouse */
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #6b2091 #2b0147;
+}
+
