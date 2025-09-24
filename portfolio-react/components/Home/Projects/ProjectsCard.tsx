@@ -26,47 +26,40 @@ const ProjectsCard = ({ image, video, title, description, techs, link }: Props) 
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          whileHover={{ scale: 1.03 }}
-          className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-lg hover:shadow-purple-500/30 transition-all duration-300 overflow-hidden group cursor-pointer"
+          whileHover={{ scale: 1.02 }}
+          className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl shadow-lg hover:shadow-purple-500/30 transition-all duration-300 overflow-hidden group cursor-pointer"
           onClick={() => setIsOpen(true)}
         >
-          {/* Imagem com ícone de play */}
-          <div className="w-full h-48 relative overflow-hidden">
-            <motion.div
-              initial={{ scale: 1 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className="w-full h-full"
-            >
-              <Image
-                src={image}
-                alt={title}
-                fill
-                className="object-cover w-full h-full transition-transform duration-300"
-              />
-            </motion.div>
+          {/* Imagem */}
+          <div className="w-full h-40 relative overflow-hidden">
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+            />
 
-            {/* Ícone de play */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
-              <motion.div whileHover={{ scale: 1.2 }} className="text-white text-5xl">
+            {/* Ícone play */}
+            <div className="absolute inset-0 flex items-center justify-center bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl">
+              <motion.div whileHover={{ scale: 1.15 }} className="text-white text-4xl">
                 ▶
               </motion.div>
             </div>
           </div>
 
           {/* Conteúdo */}
-          <div className="p-6 flex flex-col justify-between h-full">
-            <h2 className="text-white text-xl font-semibold mb-2 group-hover:text-purple-300 transition-colors">
+          <div className="p-4 flex flex-col justify-between h-full">
+            <h2 className="text-white text-lg font-semibold mb-1 group-hover:text-purple-300 transition-colors">
               {title}
             </h2>
-            <p className="text-gray-300 text-sm mb-4">{description}</p>
+            <p className="text-gray-300 text-xs mb-3 line-clamp-3">{description}</p>
 
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-1.5 mb-3">
               {techs.map((tech, i) => (
                 <motion.span
                   key={i}
-                  whileHover={{ scale: 1.1 }}
-                  className="px-3 py-1 text-xs bg-purple-500/20 text-purple-300 rounded-full transition-all"
+                  whileHover={{ scale: 1.05 }}
+                  className="px-2 py-0.5 text-[11px] bg-purple-500/20 text-purple-300 rounded-full transition-all"
                 >
                   {tech}
                 </motion.span>
@@ -79,12 +72,12 @@ const ProjectsCard = ({ image, video, title, description, techs, link }: Props) 
               rel="noopener noreferrer"
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0px 0px 15px rgba(168,85,247,0.8)",
+                boxShadow: "0px 0px 12px rgba(168,85,247,0.7)",
               }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm rounded-lg shadow-md hover:bg-purple-500 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-purple-600 text-white text-xs rounded-md shadow-md hover:bg-purple-500 transition-colors"
               onClick={(e) => e.stopPropagation()}
             >
-              <FaExternalLinkAlt className="w-4 h-4" />
+              <FaExternalLinkAlt className="w-3 h-3" />
               Ver Projeto
             </motion.a>
           </div>
@@ -95,21 +88,21 @@ const ProjectsCard = ({ image, video, title, description, techs, link }: Props) 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-3"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsOpen(false)}
           >
             <motion.div
-              className="relative w-full max-w-5xl"
+              className="relative w-full max-w-4xl"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                className="absolute top-2 right-2 text-white text-2xl z-10"
+                className="absolute top-2 right-2 text-white text-xl z-10"
                 onClick={() => setIsOpen(false)}
               >
                 <FaTimes />
@@ -119,7 +112,7 @@ const ProjectsCard = ({ image, video, title, description, techs, link }: Props) 
                 src={video}
                 controls
                 autoPlay
-                className="w-full h-auto max-h-[90vh] rounded-lg shadow-lg object-contain"
+                className="w-full h-auto max-h-[85vh] rounded-md shadow-lg object-contain"
               />
             </motion.div>
           </motion.div>
