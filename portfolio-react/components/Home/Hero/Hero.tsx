@@ -33,9 +33,9 @@ const Hero = () => {
           <Image
             src="/assets/avatarDuda.png"
             alt="heroimage"
-            className="w-40 sm:w-56 md:w-72 lg:w-96 h-auto mb-8 rounded-full shadow-lg"
-            width={370}
-            height={370}
+            className="w-32 sm:w-44 md:w-56 lg:w-72 h-auto mb-6 rounded-full shadow-lg"
+            width={300}
+            height={300}
           />
         </motion.div>
 
@@ -47,7 +47,7 @@ const Hero = () => {
           transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
         >
           <motion.h1
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold"
             whileHover={{ scale: 1.05, color: "#D8B4FE" }}
             transition={{ type: "spring", stiffness: 200 }}
           >
@@ -55,7 +55,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.h2
-            className="mt-5 text-base sm:text-xl md:text-2xl font-medium flex items-center justify-center gap-2"
+            className="mt-4 text-sm sm:text-lg md:text-xl font-medium flex items-center justify-center gap-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.6 }}
