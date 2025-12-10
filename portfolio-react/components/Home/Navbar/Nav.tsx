@@ -67,8 +67,8 @@ const Nav = ({ openNav }: Props) => {
         {/* Ações */}
         <div className="flex items-center space-x-4">
           <a
-            href="/curriculo-MariaEduarda.pdf"
-            download="curriculo-MariaEduarda.pdf"
+            href="/CurriculoEduarda.pdf"
+            download="CurriculoEduarda.pdf"
             target="_blank"
             className="px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-lg cursor-pointer rounded-full bg-purple-900 hover:bg-purple-950 text-white flex items-center space-x-2"
           >
