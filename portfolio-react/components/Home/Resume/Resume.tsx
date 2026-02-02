@@ -2,7 +2,7 @@
 
 import React from "react";
 import ResumeCard from "./ResumeCard";
-import { FaCodepen, FaCloud } from "react-icons/fa";
+import { FaCodepen, FaCloud, FaJava } from "react-icons/fa";
 import { BsDatabase } from "react-icons/bs";
 import { BiBadge } from "react-icons/bi";
 import { Roboto_Condensed } from "next/font/google";
@@ -52,7 +52,7 @@ const Resume = () => {
               link="/certificados/google-cloud.pdf"
             />
             <ResumeCard
-              Icon={BsDatabase}
+              Icon={FaJava}
               role="Java Cloud Native"
               date="Mar - 2025"
               description="Desenvolver, implantar e gerenciar aplicações Java com tecnologias de computação em nuvem."
@@ -75,9 +75,9 @@ const Resume = () => {
           <div className="mt-6 flex flex-col gap-5 h-auto">
             <ResumeCard
               Icon={FaCodepen}
-              role="Desenvolvedora Full Stack"
+              role="Estagiária FullStack"
               date="Jan - 2025"
-              description="Na 2RPnet, onde sou estagiária Full Stack, alocada à squad da CaseX, utilizando C# no backend e React com TypeScript no frontend. Onde tenho, também, a função de migrar bancos de dados."
+              description="Na 2RPnet, onde sou estagiária FullStack, alocada no time de dados, trabalhando com Python, SQL, GCP em geral."
             />
           </div>
         </motion.div>
